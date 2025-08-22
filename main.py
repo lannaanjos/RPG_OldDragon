@@ -17,8 +17,11 @@ Entrega: Enviar o link do GitHub com o código'''
 
 import random
 from base_personagem import Personagem
+from classes_personagem import escolher_classe
 from dados import estilo_aventureiro, estilo_classico, estilo_heroico
-from metodos_auxiliares import limpar_tela, aguarda_tecla
+from metodos_auxiliares import limpar_tela, aguarda_tecla, corrente
+
+# Guerreiro, Barbaro, Paladino, Clerigo, Druida, Academico, Mago, Ilusionista, Necromante, 
 
 # Main
 def main():
@@ -61,13 +64,20 @@ def main():
                 personagem.sabedoria = atributos[4]
                 personagem.carisma = atributos[5]
                 
+                
                 #   Escolha de classe
-                # personagem.classe = escolher_classe()
+                limpar_tela()
+                personagem.classe = escolher_classe()
                 
                 #   Mostra resultado final
                 print("Personagem criado com sucesso!")
                 aguarda_tecla()
-            
+                
+                print("=-=-=-= Ficha do Personagem =-=-=-=")
+                personagem.mostrar_info()
+                corrente()
+                aguarda_tecla()           
+                
             else:
                 print("Opção inválida!\nTente novamente.")
                 
@@ -77,5 +87,8 @@ def main():
         
 if __name__ == "__main__":
         main()
+        
+### A fazer:
+# Fazer método auxilar "Verifica_Validade"
     
         

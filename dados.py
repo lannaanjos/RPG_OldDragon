@@ -59,7 +59,7 @@ def distribuicao_por_escolha(valores):
     corrente()
     time.sleep(1.75)
     
-    print("                        Atributos")
+    print("                           Atributos")
     print("        Força - Destreza - Constituição - Inteligência\n                    Sabedoria - Carisma")
     corrente()
     time.sleep(1.75)

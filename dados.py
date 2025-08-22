@@ -1,5 +1,10 @@
-'''                                     CLASSE DE DADOS'''
 import random
+import time
+from metodos_auxiliares import limpar_tela, corrente
+
+
+'''                                     CLASSE DE DADOS'''
+
 
 class Dados: 
     @staticmethod
@@ -47,9 +52,17 @@ def estilo_heroico():
     return distribuicao_por_escolha(valores)
 
 def distribuicao_por_escolha(valores):
-    print(f"Valores rodados: {valores}")
-    print("Distribua os pontos entre os atributos: ")
-    print("[1] Força [2] Destreza [3] Constituição [4] Inteligência [5] Sabedoria [6] Carisma")
+    
+    print("=-=-=-=-=-=-=-= Distribuição dos Atributos =-=-=-=-=-=-=-=")
+    
+    print(f"                  {valores}")
+    corrente()
+    time.sleep(1.75)
+    
+    print("                        Atributos")
+    print("        Força - Destreza - Constituição - Inteligência\n                    Sabedoria - Carisma")
+    corrente()
+    time.sleep(1.75)
     
     atributos = [0,0,0,0,0,0]
     val_usados = [False, False, False, False, False, False]
@@ -57,7 +70,7 @@ def distribuicao_por_escolha(valores):
     nomes_atributos = ["Força", "Destreza", "Constituição", "Inteligência", "Sabedoria", "Carisma"]
     
     for i in range(6):
-        print(f"Escolha o valor {nomes_atributos[i]}:")
+        print(f"Escolha o valor do atributo {nomes_atributos[i]}:")
         
         # Mostra valores disponíveis
         for j in range(6):
@@ -75,5 +88,8 @@ def distribuicao_por_escolha(valores):
                     print("Opção inválida! Escolha um número disponível.")
             except ValueError:
                 print("Digite um número válido!")
+                
+        corrente()
+        time.sleep(0.2)
     
     return atributos

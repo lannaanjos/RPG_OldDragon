@@ -17,7 +17,9 @@ Entrega: Enviar o link do GitHub com o código'''
 
 import random
 from base_personagem import Personagem
-from dados import Dados, estilo_aventureiro, estilo_classico, estilo_heroico
+from dados import estilo_aventureiro, estilo_classico, estilo_heroico
+from metodos_auxiliares import limpar_tela, aguarda_tecla
+
 # Main
 def main():
     
@@ -38,7 +40,9 @@ def main():
                 break
             elif escolha in [1,2,3]:
                 # Entra na criação de personagem
+                limpar_tela()
                 nome = input("Insira o nome do seu personagem: ")
+                limpar_tela()
                 
                 personagem = Personagem(nome)
                 
@@ -61,6 +65,8 @@ def main():
                 # personagem.classe = escolher_classe()
                 
                 #   Mostra resultado final
+                print("Personagem criado com sucesso!")
+                aguarda_tecla()
             
             else:
                 print("Opção inválida!\nTente novamente.")

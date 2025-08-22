@@ -20,6 +20,7 @@ from base_personagem import Personagem
 from classes_personagem import escolher_classe
 from dados import estilo_aventureiro, estilo_classico, estilo_heroico
 from metodos_auxiliares import limpar_tela, aguarda_tecla, corrente
+from classes_personagem import Guerreiro, Paladino, Barbaro, Clerigo, Druida, Academico, Mago, Necromante, Ilusionista
 
 # Guerreiro, Barbaro, Paladino, Clerigo, Druida, Academico, Mago, Ilusionista, Necromante, 
 
@@ -31,9 +32,9 @@ def main():
         print("=-=-=-=-= Criação de Personagem =-=-=-=-=")
         print()
         print("[1] Estilo Clássico")
-        print("[2] Estlo Aventureiro")
+        print("[2] Estilo Aventureiro")
         print("[3] Estilo Heroico")
-        print("[4] Sair")
+        print("[4] Sair\n")
         
         try:
             escolha = int(input("Selecione uma opção: "))
@@ -73,7 +74,7 @@ def main():
                 print("Personagem criado com sucesso!")
                 aguarda_tecla()
                 
-                print("=-=-=-= Ficha do Personagem =-=-=-=")
+                # Mostra personagem criado
                 personagem.mostrar_info()
                 corrente()
                 aguarda_tecla()           
@@ -89,6 +90,8 @@ if __name__ == "__main__":
         main()
         
 ### A fazer:
+# Refinamento
+# Documentação
 # Fazer método auxilar "Verifica_Validade"
     
         

@@ -52,15 +52,14 @@ def estilo_heroico():
     return distribuicao_por_escolha(valores)
 
 def distribuicao_por_escolha(valores):
-    
-    print("=-=-=-=-=-=-=-= Distribuição dos Atributos =-=-=-=-=-=-=-=")
-    
-    print(f"                  {valores}")
+    corrente()
+    print("             Distribuição")    
+    print(f"        {valores}")
     corrente()
     time.sleep(1.75)
     
-    print("                           Atributos")
-    print("        Força - Destreza - Constituição - Inteligência\n                    Sabedoria - Carisma")
+    print("               Atributos")
+    print("   Força - Destreza - Constituição\n Inteligência - Sabedoria - Carisma")
     corrente()
     time.sleep(1.75)
     

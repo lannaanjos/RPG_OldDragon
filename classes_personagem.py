@@ -20,6 +20,9 @@ class Guerreiro:
     def ataque_extra(self):
         if self.nivel >= 6:
                 print("Você tem um segundo ataque disponível com sua arma de maestria!")
+            
+    def __repr__(self):
+        return "Guerreiro"
                 
 class Barbaro(Guerreiro):
     def __init__(self):
@@ -40,6 +43,9 @@ class Barbaro(Guerreiro):
     def forca_do_totem(self):
         if self.nivel == 10:
             print("Você pode ferir qualquer criatura que precise de uma arma mágica para ser ferida")
+            
+    def __repr__(self):
+        return "Bárbaro"
 
 class Paladino(Guerreiro):
     def __init__(self):
@@ -60,12 +66,11 @@ class Paladino(Guerreiro):
     def espada_sagrada(self):
         if self.nivel == 10:
             print("Ganha uma Espada Sagrada ao derrotar um inimigo caótico de grande poder.")
-    
-                        
-                        
+            
+    def __repr__(self):
+        return "Paladino"                        
                         
 '''                             CLÉRIGO E ESPECIALIZAÇÕES'''
-
 
 class Clerigo():
     def __init__(self):
@@ -82,6 +87,9 @@ class Clerigo():
     def cura_milagrosa(self):
         if self.nivel >= 1:
             print("Você pode curar ferimentos de 1º círculo!")
+            
+    def __repr__(self):
+        return "Clérigo"
             
 class Druida(Clerigo):
     def __init__(self):
@@ -101,6 +109,9 @@ class Druida(Clerigo):
         if self.nivel == 10:
             print('"Você pode assumir a forma de um animal não mágia de qualquer tamanho 3 vezes ao dia.')
             
+    def __repr__(self):
+        return "Druida"
+            
 class Academico(Clerigo):
     def __init__(self):
         super().__init__()
@@ -117,6 +128,11 @@ class Academico(Clerigo):
         if self.nivel >= 6:
             print("Você é capaz de identificar lendas e tradições")
             
+    def __repr__(self):
+        return "Acadêmico"
+            
+'''                                 MAGO E ESPECIALIZAÇÕES'''  
+          
 class Mago():
     def __init__(self):
         self.nivel = 0
@@ -132,6 +148,9 @@ class Mago():
     def detectar_magias(self):
         if self.nivel >= 1:
             print("Você é capaz de perceber coisas ou pesssoas encantadas uma vez ao dia")
+            
+    def __repr__(self):
+        return "Mago"
             
 class Ilusionista(Mago):
     def __init__(self):
@@ -153,6 +172,9 @@ class Ilusionista(Mago):
         if self.nivel == 10:
             print("Você cria uma ilusão permanente")
             
+    def __repr__(self):
+        return "Ilusionista"
+            
 class Necromante(Mago):
     def __init__(self):
         super().__init__()
@@ -173,12 +195,14 @@ class Necromante(Mago):
         if self.nivel == 10:
             print("Você pode matar alguém instantaneamente")
             
+    def __repr__(self):
+        return "Necromante"            
             
             
 ### MÉTODO DE ESCOLHA DE CLASSES
 def escolher_classe():    
     corrente()
-    print("                    Escolha de Classe       ")
+    print("          Escolha de Classe       ")
     corrente()
     print("[1] Guerreiro")
     print("[2] Clérigo")
@@ -187,6 +211,10 @@ def escolher_classe():
     while True:
         try:
             escolha_classe = int(input("Selecione a opção desejada: "))
+            
+            corrente()
+            print("           Especialização")
+            
             if escolha_classe == 1:
                 print("[1] Bárbaro")
                 print("[2] Paladino")

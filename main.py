@@ -20,7 +20,7 @@ from base_personagem import Personagem
 from classes_personagem import escolher_classe
 from dados import estilo_aventureiro, estilo_classico, estilo_heroico
 from metodos_auxiliares import limpar_tela, aguarda_tecla, corrente
-from classes_personagem import Guerreiro, Paladino, Barbaro, Clerigo, Druida, Academico, Mago, Necromante, Ilusionista
+
 
 # Guerreiro, Barbaro, Paladino, Clerigo, Druida, Academico, Mago, Ilusionista, Necromante, 
 
@@ -88,10 +88,5 @@ def main():
         
 if __name__ == "__main__":
         main()
-        
-### A fazer:
-# Refinamento
-# Documentação
-# Fazer método auxilar "Verifica_Validade"
     
         

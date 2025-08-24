@@ -3,21 +3,36 @@ from metodos_auxiliares import corrente
 
 class Personagem:
     def __init__(self, nome):
+        #   Infos Básicas
         self.nome = nome
-        #   Atributos / Classe
+        self.hp = 0
+        self.nivel = 1
+        self.xp = 0
+        #   Raça e Classe
+        self.raca = ""
+        self.classe = ""
+        #   Caracteristicas
+        self.movimento = 0
+        self.infravisao = 0
+        self.alinhamento = ""
+        self.car_raca = ""  
+        #   Atributos
         self.forca = 0
         self.destreza = 0
         self.constituicao = 0
         self.inteligencia = 0
         self.sabedoria = 0
         self.carisma = 0
-        self.classe = ""
+        #   Habilidades
+        self.habilidades = ""
+        
         
     def mostrar_info(self):
         print("=-=-=-=- Ficha do Personagem -=-=-=-=")
         print(f"Nome: {self.nome}")
         print(f"Classe: {self.classe}")
         corrente()
+        
         
         if 3 <= self.forca <= 8:
             print(f"Força: {self.forca} - Fraco")

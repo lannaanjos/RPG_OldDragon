@@ -1,5 +1,6 @@
 from metodos_auxiliares import corrente, limpar_tela
 from racas import Humano, Elfo, Anao, Halfling
+from classes_personagem import Guerreiro, Paladino, Barbaro
 '''                                     CLASSE BASE PERSONAGEM'''
 
 class Personagem:
@@ -75,13 +76,21 @@ class Personagem:
         elif self.raca == "Halfling":
             self.movimento = 6
             self.alinhamento = "Neutro"
-            self.car_raca = Halfling().hab_raca              
+            self.car_raca = Halfling().hab_raca 
+            
+    def set_by_classe(self, objeto_classe):
+        self.classe = str(objeto_classe)
+        self.hp = objeto_classe.hp_base
+        self.habilidades = objeto_classe.habilidades
+
+            
         
     def mostrar_info(self):
         print("=-=-=-=- Ficha do Personagem -=-=-=-=")
         print(f"Nome: {self.nome}")
         print(f"Raça: {self.raca}")
         print(f"Classe: {self.classe}")
+        print(f"Pontos de Vida: {self.hp}")
         corrente()
         print(f"Movimento: {self.movimento} m")
         print(f"Infravisão: {self.infravisao} m")
@@ -142,4 +151,7 @@ class Personagem:
             print(f"Carisma: {self.carisma} - Influente")
         else:
             print(f"Carisma: {self.carisma} - Ídolo")
+            
+        corrente()
+        print(f"Habilidades: {", ".join(self.habilidades)}")
             

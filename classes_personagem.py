@@ -4,6 +4,7 @@ from metodos_auxiliares import corrente
 
 class Guerreiro:
     def __init__(self):
+        self.hp_base = 10
         self.habilidades = ["Aparar", "Maestria em Arma", "Ataque Extra"]
             
     def __repr__(self):
@@ -29,6 +30,7 @@ class Paladino(Guerreiro):
 
 class Clerigo():
     def __init__(self):
+        self.hp_base = 8
         self.habilidades = ["Magia Divina", "Afastar Mortos Vivos", "Cura Milagrosa"]
             
     def __repr__(self):
@@ -54,6 +56,7 @@ class Academico(Clerigo):
           
 class Mago():
     def __init__(self):
+        self.hp_base = 4
         self.habilidades = ["Magias Arcanas", "Ler Magias", "Detectar Magias"]
         self.magias_exclusivas = []
         
@@ -80,6 +83,7 @@ class Necromante(Mago):
 
 class Ladrao:
     def __init__(self):
+        self.hp_base = 6
         self.habilidades = ["Ataque Furtivo", "Ouvir Ruídos", "Talentos de Ladrão"]
             
     def __repr__(self):

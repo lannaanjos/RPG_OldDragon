@@ -56,6 +56,7 @@ def main():
                 #   Escolha de classe
                 limpar_tela()
                 personagem.classe = escolher_classe()
+                personagem.set_by_classe(personagem.classe)
                 limpar_tela()
                 
                 if escolha == 1:
@@ -72,10 +73,7 @@ def main():
                 personagem.inteligencia = atributos[3]
                 personagem.sabedoria = atributos[4]
                 personagem.carisma = atributos[5]
-                
-                
-                
-                
+                                             
                 #   Mostra resultado final
                 print("Personagem criado com sucesso!")
                 aguarda_tecla()

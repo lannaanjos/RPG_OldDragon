@@ -1,6 +1,6 @@
-from metodos_auxiliares import corrente, limpar_tela
+from metodos_auxiliares import corrente, limpar_tela, texto_comprido
 from racas import Humano, Elfo, Anao, Halfling
-from classes_personagem import Guerreiro, Paladino, Barbaro
+
 '''                                     CLASSE BASE PERSONAGEM'''
 
 class Personagem:
@@ -94,8 +94,9 @@ class Personagem:
         corrente()
         print(f"Movimento: {self.movimento} m")
         print(f"Infravisão: {self.infravisao} m")
-        print(f"Alinhamento: {self.alinhamento}")
-        print(f"Características da Raça: {", ".join(self.car_raca)}")
+        print(f"Alinhamento: {self.alinhamento}")       
+        print(texto_comprido(f"Características da Raça: {", ".join(self.car_raca)}"))
+        
         corrente()        
         
         if 3 <= self.forca <= 8:
@@ -153,5 +154,5 @@ class Personagem:
             print(f"Carisma: {self.carisma} - Ídolo")
             
         corrente()
-        print(f"Habilidades: {", ".join(self.habilidades)}")
+        print(texto_comprido(f"Habilidades: {", ".join(self.habilidades)}"))
             

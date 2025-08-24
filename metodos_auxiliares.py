@@ -1,4 +1,5 @@
 import os
+import textwrap
 
 def limpar_tela():
     if os.name == 'nt':
@@ -12,5 +13,8 @@ def aguarda_tecla():
     
 def corrente():
     print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+    
+def texto_comprido(texto):
+    return textwrap.fill(texto, width=41)
     
            

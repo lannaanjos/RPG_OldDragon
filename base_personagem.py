@@ -36,7 +36,7 @@ class Personagem:
             self.car_raca = Humano().hab_raca
             
             corrente()
-            print("Alinhamento")
+            print("             Alinhamento")
             corrente()
             print("[1] Ordem")
             print("[2] Neutro")

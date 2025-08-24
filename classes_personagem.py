@@ -66,7 +66,8 @@ class Mago():
 class Ilusionista(Mago):
     def __init__(self):
         super().__init__()
-        self.habilidades.extend(["Miragem", "Ilusão Melhorada", "Ilusão Permanente", self.magias_exclusivas])     
+        self.habilidades.extend(["Miragem", "Ilusão Melhorada", "Ilusão Permanente"])    
+        self.habilidades.extend(self.magias_exclusivas)
             
     def __repr__(self):
         return "Ilusionista"
@@ -74,7 +75,8 @@ class Ilusionista(Mago):
 class Necromante(Mago):
     def __init__(self):
         super().__init__()
-        self.habilidades.extend(["Criar Mortos Vivos", "Drenar Vida", "Magia da Morte", self.magias_exclusivas])
+        self.habilidades.extend(["Criar Mortos Vivos", "Drenar Vida", "Magia da Morte"])
+        self.habilidades.extend(self.magias_exclusivas)
             
     def __repr__(self):
         return "Necromante"       

@@ -17,6 +17,7 @@ Entrega: Enviar o link do GitHub com o código'''
 
 import random
 from base_personagem import Personagem
+from racas import escolher_raca
 from classes_personagem import escolher_classe
 from dados import estilo_aventureiro, estilo_classico, estilo_heroico
 from metodos_auxiliares import limpar_tela, aguarda_tecla, corrente
@@ -46,9 +47,16 @@ def main():
                 # Entra na criação de personagem
                 limpar_tela()
                 nome = input("Insira o nome do seu personagem: ")
-                limpar_tela()
-                
                 personagem = Personagem(nome)
+                
+                #   Escolha de Raça + Add características das raças
+                limpar_tela()
+                personagem.raca = escolher_raca()
+                personagem.set_by_raca(personagem.raca)
+                #   Escolha de classe
+                limpar_tela()
+                personagem.classe = escolher_classe()
+                limpar_tela()
                 
                 if escolha == 1:
                     atributos = estilo_classico()
@@ -66,9 +74,7 @@ def main():
                 personagem.carisma = atributos[5]
                 
                 
-                #   Escolha de classe
-                limpar_tela()
-                personagem.classe = escolher_classe()
+                
                 
                 #   Mostra resultado final
                 print("Personagem criado com sucesso!")
@@ -87,6 +93,6 @@ def main():
         
         
 if __name__ == "__main__":
-        main()
+    main()
     
         

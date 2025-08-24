@@ -1,4 +1,5 @@
-from metodos_auxiliares import corrente
+from metodos_auxiliares import corrente, limpar_tela
+from racas import Humano, Elfo, Anao, Halfling
 '''                                     CLASSE BASE PERSONAGEM'''
 
 class Personagem:
@@ -26,13 +27,67 @@ class Personagem:
         #   Habilidades
         self.habilidades = ""
         
+    def set_by_raca(self, objeto_raca):
+        self.raca = str(objeto_raca)
+        
+        if self.raca == "Humano":
+            self.movimento = 9
+            self.car_raca = Humano().hab_raca
+            
+            corrente()
+            print("Alinhamento")
+            corrente()
+            print("[1] Ordem")
+            print("[2] Neutro")
+            print("[3] Caos")
+            while True:
+                try:
+                    escolha_alinhamento = int(input("Selecione a opção desejada: "))
+                    
+                    if escolha_alinhamento == 1:
+                        self.alinhamento = "Ordem"
+                        break
+                    elif escolha_alinhamento == 2:
+                        self.alinhamento = "Neutro"
+                        break
+                    elif escolha_alinhamento == 3:
+                        self.alinhamento = "Caos"
+                        break
+                    else:
+                        print("Tente de novo")
+                except ValueError:
+                    print("Insira um valor válido")
+                    
+            limpar_tela()
+                    
+        elif self.raca == "Elfo":
+            self.movimento = 9
+            self.infravisao = 18
+            self.alinhamento = "Neutro"
+            self.car_raca = Elfo().hab_raca
+            
+        elif self.raca == "Anão":
+            self.movimento = 6
+            self.infravisao = 18
+            self.alinhamento = "Ordem"
+            self.car_raca = Anao().hab_raca
+            
+        elif self.raca == "Halfling":
+            self.movimento = 6
+            self.alinhamento = "Neutro"
+            self.car_raca = Halfling().hab_raca              
         
     def mostrar_info(self):
         print("=-=-=-=- Ficha do Personagem -=-=-=-=")
         print(f"Nome: {self.nome}")
+        print(f"Raça: {self.raca}")
         print(f"Classe: {self.classe}")
         corrente()
-        
+        print(f"Movimento: {self.movimento} m")
+        print(f"Infravisão: {self.infravisao} m")
+        print(f"Alinhamento: {self.alinhamento}")
+        print(f"Características da Raça: {", ".join(self.car_raca)}")
+        corrente()        
         
         if 3 <= self.forca <= 8:
             print(f"Força: {self.forca} - Fraco")
@@ -87,3 +142,4 @@ class Personagem:
             print(f"Carisma: {self.carisma} - Influente")
         else:
             print(f"Carisma: {self.carisma} - Ídolo")
+            

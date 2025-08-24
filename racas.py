@@ -32,7 +32,7 @@ class Halfling:
 
 def escolher_raca():
     corrente()
-    print("Escolha de Raça")
+    print("           Escolha de Raça")
     corrente()
     print("[1] Humano")
     print("[2] Elfo")

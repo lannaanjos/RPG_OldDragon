@@ -54,7 +54,7 @@ def estilo_heroico():
 def distribuicao_por_escolha(valores):
     corrente()
     print("             Distribuição")    
-    print(f"        {valores}")
+    print(f"       {valores}")
     corrente()
     time.sleep(1.75)
     

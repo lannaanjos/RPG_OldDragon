@@ -75,7 +75,7 @@ class Personagem:
         elif 9 <= self.sabedoria <= 12:
             print(f"Sabedoria: {self.sabedoria} - Mediano")
         elif 13 <= self.sabedoria <= 16:
-            print(f"Sabedoria: {self.sabedoria} - InIntuitivo")
+            print(f"Sabedoria: {self.sabedoria} - Intuitivo")
         else:
             print(f"Sabedoria: {self.sabedoria} - Presciente")
           

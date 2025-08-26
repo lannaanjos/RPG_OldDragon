@@ -1,4 +1,5 @@
 from metodos_auxiliares import corrente
+from dados import Dados
 
 '''                             GUERREIRO E ESPECIALIZAÇÕES'''
 
@@ -6,6 +7,29 @@ class Guerreiro:
     def __init__(self):
         self.hp_base = 10
         self.habilidades = ["Aparar", "Maestria em Arma", "Ataque Extra"]
+        
+    @staticmethod
+    def sobe_nivel(xp):
+        if xp == 2000:
+            return Dados().rolar_1d10()
+        elif xp == 4000:
+            return Dados().rolar_1d10()
+        elif xp == 7000:
+            return Dados().rolar_1d10()
+        elif xp == 10000:
+            return Dados().rolar_1d10()
+        elif xp == 20000:
+            return Dados().rolar_1d10()
+        elif xp == 30000:
+            return Dados().rolar_1d10()
+        elif xp == 40000:
+            return Dados().rolar_1d10()
+        elif xp == 50000:
+            return Dados().rolar_1d10()
+        elif xp == 100000:
+            return Dados().rolar_1d10()
+        else:
+            return 0 
             
     def __repr__(self):
         return "Guerreiro"
@@ -32,6 +56,29 @@ class Clerigo():
     def __init__(self):
         self.hp_base = 8
         self.habilidades = ["Magia Divina", "Afastar Mortos Vivos", "Cura Milagrosa"]
+    
+    @staticmethod       
+    def sobe_nivel(xp):
+        if xp == 1500:
+            return Dados().rolar_1d8()
+        elif xp == 3000:
+            return Dados().rolar_1d8()
+        elif xp == 5500:
+            return Dados().rolar_1d8()
+        elif xp == 8500:
+            return Dados().rolar_1d8()
+        elif xp == 17000:
+            return Dados().rolar_1d8()
+        elif xp == 27000:
+            return Dados().rolar_1d8()
+        elif xp == 37000:
+            return Dados().rolar_1d8()
+        elif xp == 47000:
+            return Dados().rolar_1d8()
+        elif xp == 94000:
+            return Dados().rolar_1d8()
+        else:
+            return 0
             
     def __repr__(self):
         return "Clérigo"
@@ -59,6 +106,29 @@ class Mago():
         self.hp_base = 4
         self.habilidades = ["Magias Arcanas", "Ler Magias", "Detectar Magias"]
         self.magias_exclusivas = []
+        
+    @staticmethod
+    def sobe_nivel(xp):
+        if xp == 2500:
+            return Dados().rolar_1d4()
+        elif xp == 5000:
+            return Dados().rolar_1d4()
+        elif xp == 8500:
+            return Dados().rolar_1d4()
+        elif xp == 11500:
+            return Dados().rolar_1d4()
+        elif xp == 23000:
+            return Dados().rolar_1d4()
+        elif xp == 33000:
+            return Dados().rolar_1d4()
+        elif xp == 43000:
+            return Dados().rolar_1d4()
+        elif xp == 53000:
+            return Dados().rolar_1d4()
+        elif xp == 106000:
+            return Dados().rolar_1d4()
+        else:
+            return 0    
         
     def __repr__(self):
         return "Mago"
@@ -95,6 +165,29 @@ class Ranger(Ladrao):
     def __init__(self):
         super().__init__()
         self.habilidades.extend(["Inimigo Mortal", "Combativo", "Previdência", "Companheiro Animal"])
+        
+    @staticmethod
+    def sobe_nivel(xp):
+        if xp == 1000:
+            return Dados().rolar_1d6()
+        elif xp == 2000:
+            return Dados().rolar_1d6()
+        elif xp == 4000:
+            return Dados().rolar_1d6()
+        elif xp == 7000:
+            return Dados().rolar_1d6()
+        elif xp == 14000:
+            return Dados().rolar_1d6()
+        elif xp == 24000:
+            return Dados().rolar_1d6()
+        elif xp == 34000:
+            return Dados().rolar_1d6()
+        elif xp == 44000:
+            return Dados().rolar_1d6()
+        elif xp == 88000:
+            return Dados().rolar_1d6()
+        else:
+            return 0    
         
     def __repr__(self):
         return "Ranger"

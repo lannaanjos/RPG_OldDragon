@@ -17,6 +17,28 @@ class Dados:
         dados.remove(min(dados))    #   Tira o menor valor
         return sum(dados)
     
+    @staticmethod
+    def rolar_1d10(): # + Vida pós upar Guerreiro e especializações
+        dados = random.randint(1, 10)
+        return dados
+    
+    @staticmethod
+    def rolar_1d8(): # + Vida pós upar Clérigo e especializações
+        dados = random.randint(1,8)
+        return dados
+    
+    @staticmethod
+    def rolar_1d6(): # + Vida Ladrão e especizaliações
+        dados = random.randint(1,6)
+        return dados
+    
+    @staticmethod
+    def rolar_1d4(): # + Vida pós upar Mago e espcializações
+        dados = random.randint(1,4)
+        return dados
+        
+    
+    
 '''                         MÉTODOS DE DISTRIBUIÇÃO DE ATRIBUTOS'''
 
 # Estilo clássico

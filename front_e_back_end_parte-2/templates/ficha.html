@@ -11,7 +11,7 @@
         <h3>Atributos Base</h3>
         <ul>
           {% for k, v in p.resumo.atributos_base.items() %}
-            <li><strong>{{ k }}:</strong> {{ v }}</li>
+            <li><strong>{{ k }}:</strong> {{ v }} — <em>{{ adjetivo(k, v) }}</em></li>
           {% endfor %}
         </ul>
       </div>
@@ -19,7 +19,7 @@
         <h3>Atributos (MOD)</h3>
         <ul>
           {% for k, v in p.resumo.atributos_finais.items() %}
-            <li><strong>{{ k }}:</strong> {{ v }}</li>
+            <li><strong>{{ k }}:</strong> {{ v }} — <em>{{ adjetivo(k, v) }}</em></li>
           {% endfor %}
         </ul>
       </div>

@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for # request acessa os dados da requisição
-from model.metodos_auxiliares import gerar_atributos
+from model.metodos_auxiliares import gerar_atributos, adjetivo_atributo
 from model.base_personagem import Personagem, HABILIDADES
 from model.racas import LISTA_RACAS, get_raca
 from model.classes_personagem import LISTA_CLASSES, get_classe
@@ -36,7 +36,8 @@ def gerar():
             nome=nome
         )
         personagem.aplicar_modificadores()
-        return render_template('ficha.html', p=personagem)
+        return render_template('ficha.html', p=personagem, adjetivo=adjetivo_atributo)
+
 
     return render_template( # se modo for aventureiro ou heroico renderiza o html de atribuição de atributos
         'atribuir.html',
@@ -68,4 +69,4 @@ def finalizar():
     personagem = Personagem(atributos=atributos, raca=raca, classe=classe, nome=nome)
     personagem.aplicar_modificadores()
 
-    return render_template('ficha.html', p=personagem)
+    return render_template('ficha.html', p=personagem, adjetivo=adjetivo_atributo)

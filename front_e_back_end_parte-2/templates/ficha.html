@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="card">
+    <h2>Ficha do Personagem</h2>
+    <p><strong>Nome:</strong> {{ p.resumo.nome }}<br>
+       <strong>Raça:</strong> {{ p.resumo.raca }}<br>
+       <strong>Classe:</strong> {{ p.resumo.classe }}</p>
+
+    <div class="grid-2">
+      <div>
+        <h3>Atributos Base</h3>
+        <ul>
+          {% for k, v in p.resumo.atributos_base.items() %}
+            <li><strong>{{ k }}:</strong> {{ v }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h3>Atributos (MOD)</h3>
+        <ul>
+          {% for k, v in p.resumo.atributos_finais.items() %}
+            <li><strong>{{ k }}:</strong> {{ v }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <h3>Habilidades de Classe</h3>
+    <ul>
+      {% for hab in p.resumo.habilidades_classe %}
+        <li>{{ hab }}</li>
+      {% endfor %}
+    </ul>
+
+    <div class="actions">
+      <a class="button" href="{{ url_for('personagens.index') }}">Criar outro personagem</a>
+    </div>
+  </section>
+{% endblock %}

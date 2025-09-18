@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %} <!-- tudo dentro é o formulário -->
+  <form method="post" action="{{ url_for('personagens.gerar') }}" class="card">
+    <h2>Nome do Personagem</h2>
+    <label>
+      <span class="sr-only"></span>
+      <input type="text" name="nome" placeholder="Ex.: Sophie, Emily, Selene" required>
+    </label>
+
+    <h2>Método de Distribuição de Atributos</h2>
+    <div class="grid">
+      <label><input type="radio" name="modo" value="classico" required> Clássico</label>
+      <label><input type="radio" name="modo" value="aventureiro"> Aventureiro</label>
+      <label><input type="radio" name="modo" value="heroico"> Heróico</label>
+    </div>
+
+    <h2>Raça</h2>
+    <select name="raca" required>
+      {% for r in racas %}<option value="{{ r }}">{{ r }}</option>{% endfor %}
+    </select>
+
+    <h2>Classe</h2>
+    <select name="classe" required>
+      {% for c in classes %}<option value="{{ c }}">{{ c }}</option>{% endfor %}
+    </select>
+
+    <div class="actions">
+      <button type="submit">Criar</button>
+    </div>
+  </form>
+{% endblock %}
